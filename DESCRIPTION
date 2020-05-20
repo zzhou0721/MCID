@@ -1,0 +1,14 @@
+Package: MCID
+Type: Package
+Title: Estimating the Minimal Clinically Important Difference (MCID)
+Version: 0.1.0
+Date: 2020-04-17
+Author: Jiwei Zhao and Zehua Zhou
+Maintainer: Zehua Zhou <zehuazho@buffalo.edu>
+Description: Apply the marginal classification method to achieve the purpose of providing the point and interval estimates for the MCID based on the classical anchor-based method. More details see ...
+License: GPL (>= 2)
+Encoding: UTF-8
+LazyData: true
+Imports: 
+    stats
+RoxygenNote: 7.1.0
