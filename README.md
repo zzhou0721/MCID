@@ -25,7 +25,7 @@ devtools::install_github("zzhou0721/MCID")
 
 ## Example
 
-### Generate data:
+### Generate data
 
 ``` r
 rm(list = ls())
