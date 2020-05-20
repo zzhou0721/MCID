@@ -53,7 +53,7 @@ x[y_0] <- c + z[y_0] * d + rnorm(length(y_0), 0, 0.1)
 ### Determine MCID at the population level
 
 To determine MCID at the populaton level, we first need to select an
-optimal value for the tuning parameter , which is used to control the
+optimal value for the tuning parameter δ, which is used to control the
 difference between 0-1 loss and surrogate loss.
 
 ``` r
@@ -64,7 +64,7 @@ delsel
 #> [1] 0.1
 ```
 
-Then with selected optimal value of , we can determine the point and
+Then with selected optimal value of δ, we can determine the point and
 interval estimation of MCID at the population level. The confidence
 interval is constructed based on the asymptotic normality. In our
 simulated data, the true population MCID is 0.5.
@@ -83,9 +83,10 @@ result$'Confidence interval'
 ### Determine MCID at the individual level
 
 To determine MCID at the individual level, we first need to select a
-combination of the optimal values for the tuning parameters and . is
-used to control the difference between 0-1 loss and surrogate loss. is
-the coefficient of the penalty term used to avoid the overfitting issue.
+combination of the optimal values for the tuning parameters δ and λ. δ
+is used to control the difference between 0-1 loss and surrogate loss. λ
+is the coefficient of the penalty term used to avoid the overfitting
+issue.
 
 ``` r
 sel <- cv.imcid(x = x, y = y, z = z, lamseq = lambdaseq, 
@@ -98,11 +99,12 @@ delsel
 #> [1] 0.2
 ```
 
-Then with selected and , we can determine the point and interval
+Then with selected δ and λ, we can determine the point and interval
 estimation for the linear coefficients of the individualized MCID
 function. The confidence intervals are constructed based on the
 asymptotic normalities. In our simulated data, the true linear
-coefficients of the individualized MCID are \_0=0 and \_1=0.5
+coefficients of the individualized MCID are β<sub>0</sub> = 0 and
+β<sub>1</sub> = 0.5
 
 ``` r
 result <- imcid(x = x, y = y, z = z, n = n, lambda = lamsel, 
