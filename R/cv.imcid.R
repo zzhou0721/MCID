@@ -39,12 +39,9 @@
 #' x[y_1] <- a + z[y_1] * b + rnorm(length(y_1), 0, 0.1)
 #' x[y_0] <- c + z[y_0] * d + rnorm(length(y_0), 0, 0.1)
 #'
-#' sel <- cv.imcid(x = x, y = y, z = z, lamseq = lambdaseq,
-#'          delseq = deltaseq, k = 5, maxit = 100, tol = 1e-02)
-#' sel$'Selected lambda'
-#' sel$'Selected delta'
-#' sel$'Function value'
-#'
+#' \donttest{cv.imcid(x = x, y = y, z = z, lamseq = lambdaseq,
+#'          delseq = deltaseq, k = 5, maxit = 100, tol = 1e-02)}
+#' 
 cv.imcid <- function(x, y, z, lamseq, delseq, k = 5, maxit = 100, tol = 1e-02) {
   funval_sum <- matrix(NA, nrow = length(lamseq), ncol = length(delseq))
   for (i in 1:length(lamseq)) {
