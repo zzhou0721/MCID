@@ -32,6 +32,7 @@ a list including the point estimates for the linear coefficients of the individu
 We formulate the individualized MCID as a linear function of the patients' clinical profiles. \code{imcid} returns the point estimate for the linear coefficients of the MCID at the individual level
 }
 \examples{
+\donttest{
 rm(list = ls())
 n <- 500
 lambdaseq <- 10 ^ seq(-3, 3, 0.1)
@@ -52,16 +53,14 @@ y_0 <- which(y == -1)
 x <- c()
 x[y_1] <- a + z[y_1] * b + rnorm(length(y_1), 0, 0.1)
 x[y_0] <- c + z[y_0] * d + rnorm(length(y_0), 0, 0.1)
-
 sel <- cv.imcid(x = x, y = y, z = z, lamseq = lambdaseq,
          delseq = deltaseq, k = 5, maxit = 100, tol = 1e-02)
 lamsel <- sel$'Selected lambda'
 delsel <- sel$'Selected delta'
-
 result <- imcid(x = x, y = y, z = z, n = n, lambda = lamsel,
-            delta = delsel, maxit = 100, tol = 1e-02, alpha = 0.05)
+         delta = delsel, maxit = 100, tol = 1e-02, alpha = 0.05)
 result$'Point estimates'
 result$'Standard errors'
 result$'Confidence intervals'
-
+}
 }

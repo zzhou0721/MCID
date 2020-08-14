@@ -32,6 +32,7 @@ a list including the combinations of the selected tuning parameters and the valu
 The tuning parameters are selected for determining the MCID at the individual level
 }
 \examples{
+\donttest{
 rm(list = ls())
 n <- 500
 lambdaseq <- 10 ^ seq(-3, 3, 0.1)
@@ -55,6 +56,6 @@ sel <- cv.imcid(x = x, y = y, z = z, lamseq = lambdaseq,
          delseq = deltaseq, k = 5, maxit = 100, tol = 1e-02)
 sel$'Selected lambda'
 sel$'Selected delta'
-sel$'Function value'
+}
 
 }

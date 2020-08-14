@@ -2,11 +2,11 @@
 % Please edit documentation in R/pmcid.fun.R
 \name{pmcid.hinge.smooth}
 \alias{pmcid.hinge.smooth}
-\title{The value function used to search the initial value for determining the poppulation MCID}
+\title{The value function used to search the initial value for determining the population MCID}
 \usage{
 pmcid.hinge.smooth(x, y, w, n, tau, delta)
 }
 \description{
-The value function used to search the initial value for determining the poppulation MCID
+The value function used to search the initial value for determining the population MCID
 }
 \keyword{internal}

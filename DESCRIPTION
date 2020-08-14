@@ -4,7 +4,7 @@ Title: Estimating the Minimal Clinically Important Difference
 Version: 0.1.0
 Date: 2020-08-12
 Authors@R: c(
-    person("Zehua", "Zhou", email = "zehuazho@buffalo.edu", role = c("cre","aut")),
+    person("Zehua", "Zhou", email = "zacharyzhou1105@gmail.com", role = c("cre","aut")),
     person("Jiwei", "Zhao", email = "jiwei.zhao@wisc.edu", role = "aut"))
 Description: Apply the marginal classification method to achieve the purpose of providing the point and interval estimates for the minimal clinically important difference based on the classical anchor-based method. 
 License: GPL (>= 2)
@@ -13,3 +13,4 @@ LazyData: true
 Imports: 
     stats
 RoxygenNote: 7.1.0
+Language: en-US

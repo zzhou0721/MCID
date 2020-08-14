@@ -1,4 +1,4 @@
-#' The value function used to search the initial value for determining the poppulation MCID
+#' The value function used to search the initial value for determining the population MCID
 #' @keywords internal
 pmcid.hinge.smooth <- function(x, y, w, n, tau, delta) {
   u <- y * (x - tau)

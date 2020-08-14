@@ -19,7 +19,7 @@
 #' @export
 #'
 #' @examples
-#' 
+#' \donttest{
 #' rm(list = ls())
 #' n <- 500
 #' lambdaseq <- 10 ^ seq(-3, 3, 0.1)
@@ -40,13 +40,16 @@
 #' x <- c()
 #' x[y_1] <- a + z[y_1] * b + rnorm(length(y_1), 0, 0.1)
 #' x[y_0] <- c + z[y_0] * d + rnorm(length(y_0), 0, 0.1)
-#' \donttest{sel <- cv.imcid(x = x, y = y, z = z, lamseq = lambdaseq,
-#'          delseq = deltaseq, k = 5, maxit = 100, tol = 1e-02)}
-#' \donttest{lamsel <- sel$'Selected lambda'}
-#' \donttest{delsel <- sel$'Selected delta'}
-#' \donttest{imcid(x = x, y = y, z = z, n = n, lambda = lamsel,
-#'        delta = delsel, maxit = 100, tol = 1e-02, alpha = 0.05)}
-#' 
+#' sel <- cv.imcid(x = x, y = y, z = z, lamseq = lambdaseq,
+#'          delseq = deltaseq, k = 5, maxit = 100, tol = 1e-02)
+#' lamsel <- sel$'Selected lambda'
+#' delsel <- sel$'Selected delta'
+#' result <- imcid(x = x, y = y, z = z, n = n, lambda = lamsel,
+#'          delta = delsel, maxit = 100, tol = 1e-02, alpha = 0.05)
+#' result$'Point estimates'
+#' result$'Standard errors'
+#' result$'Confidence intervals'
+#' }
 imcid <- function(x, y, z, n, lambda, delta, maxit = 100, tol = 1e-02, alpha = 0.05) {
   w <- ifelse(y == 1, n / sum(y == 1), n / sum(y == -1))
   opt_init <- optim(par = rep(0, ncol(cbind(x, y, z)) - 1), fn = imcid.hinge.smooth, x = x, y = y, z = z, w = w, n = n, lambda = lambda, delta = delta, method = "L-BFGS-B")
